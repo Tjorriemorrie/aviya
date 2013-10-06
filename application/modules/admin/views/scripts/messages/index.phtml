@@ -1,0 +1,26 @@
+<h6 class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'create'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnNew.png' ?>" /></a></h6>
+<h1>Inbox</h1>
+
+<?php if (sizeof($this->messages) < 1) : ?>
+
+	<p>There is currently no messages.</p>
+	
+<?php else : ?>
+	
+	<table id="mailbox">
+	<tr>
+		<th>Name</th>
+		<th>Subject</th>
+		<th>Date</th>
+	</tr>
+	<?php foreach ($this->messages as $item) : ?>
+		<?php if ($item->marked == 'unread') echo '<tr class="bold">'; else echo '<tr>'; ?>			
+			<td><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'view', 'id'=>$item->id), 'default', true) ?>"><?= $item->name ?></a></td>
+			<td><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'view', 'id'=>$item->id), 'default', true) ?>"><?= $item->subject ?></a></td>
+			<td><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'view', 'id'=>$item->id), 'default', true) ?>"><?= date('d M y', strtotime($item->date_created)) ?></a></td>
+		</tr>
+	<?php endforeach ?>
+	</table>
+	
+<?php endif ?>
+

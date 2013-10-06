@@ -1,0 +1,9 @@
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'view'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnBack.png' ?>" /></a></p>
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'write'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnEdit.png' ?>" /></a></p>
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'erase'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnDelete.png' ?>" /></a></p>
+<h1><?= $this->album->title ?></h1>
+<h4><?= $this->track->trackNumber ?>) <?= $this->track->trackTitle ?></h4>
+<p>
+	<?= nl2br(stripslashes($this->track->trackLyrics)) ?>
+</p>
+

@@ -1,0 +1,18 @@
+<p class="floatRight"><a href="<?= $this->baseUrl() . '/blog.xml' ?>" title="Subscribe to rss feed"><img src="<?= $this->baseUrl() . '/img/rss.png' ?>" alt="RSS feed" /></a></p>
+
+<h1><?= $this->item->title ?></h1>
+<p class="date italic"><?= date('l, jS F Y', $this->item->date) ?></p>
+<p class="description clearBoth">
+	<?= $this->blogpic($this->item) ?>
+	<?= nl2br($this->escape($this->item->content)) ?>
+</p>
+
+<fieldset id="entryJump" class="clearBoth">
+<legend>Jump to ...</legend>
+<?php foreach ($this->blogs as $blog) : ?>
+    <span><a href="<?= $this->url(array('controller'=>'blog', 'action'=>'entry', 'title'=>$blog->title), 'default', true); ?>" title="Read this blog entry!">
+	<?= $this->escape($blog->title); ?>
+    </a></span>
+<?php endforeach; ?>
+</fieldset>
+        

@@ -1,0 +1,11 @@
+<h1><?= $this->title ?></h1>
+
+<?php if (time() < mktime(0, 0, 0, 7, 12, 2009)) : ?>
+	<div id="eventBox">
+		<h5>Upcoming event on the 11th July!</h5>
+		<p>Jacaranda's Demo Station competition at Silverstar Casino<br />
+		<a href="<?= $this->url(array('controller'=>'events', 'action'=>'upcoming'), 'default', true) ?>" title="Upcoming Event">Read here</a> for more details!</p>
+	</div>
+<?php endif ?>
+
+<?= $this->form ?>

@@ -1,0 +1,25 @@
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'create'), 'default', TRUE) ?>"><img src="<?= $this->baseUrl() . '/img/btnNew.png' ?>" /></a></p>
+<h1>Blog</h1>
+<br class="clearBoth" />
+
+<?php if (sizeof($this->blog) < 1) : ?>
+
+	<p>There is no blog entries.</p>
+
+<?php else : ?>
+
+	<?php foreach ($this->blog as $item) : ?>
+		<div class="blogBox">
+			<p class="floatRight smaller"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'status', 'id'=>$item->id), 'default', true) ?>"><?= $item->status ?></a></p>
+			<h4><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'view', 'id'=>$item->id), 'default', TRUE) ?>"><?= $item->title ?></a></h4>
+			<p class="date"><?= date('l, jS M Y', $item->date) ?></p>
+			<p><?= nl2br(stripslashes($item->description)) ?></p>
+		</div>
+	<?php endforeach ?>
+	
+	<div class="paging">
+		<?= $this->paging($this->page, $this->pagesTotal) ?>
+	</div>
+
+<?php endif ?>
+

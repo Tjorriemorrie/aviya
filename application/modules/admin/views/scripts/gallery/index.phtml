@@ -1,0 +1,27 @@
+<br class="marTop20" />
+<h1 class="header"><span class="floatRight"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'gallery', 'action'=>'create'), 'default', true) ?>">NEW</a></span><?= $this->escape($this->title) ?></h1>
+
+<div class="main">
+	
+	<?php if (sizeof($this->photos) < 1) : ?>
+	
+		<p>There is currently no photos.</p>
+		
+	<?php else : ?>
+		
+		<?php foreach ($this->photos as $key => $photo) : ?>
+			<?php if (($key %= 4) == 0) echo '<br class="clearBoth" />'; ?>
+			<div class="imgBox">
+				<h3><?= $photo->name ?></h3>
+				<p><?php if ($photo->date_modified == 0) echo 'Created on ' . date('j M y', strtotime($photo->date_created)); else echo 'Last modified on ' . date('j M y', $photo->date_modified); ?>
+				<p>Status: <a href="<?= $this->url(array('module'=>'admin', 'controller'=>'gallery', 'action'=>'status', 'id'=>$photo->id), 'default', true) ?>" title="Toggle status"><?= $photo->status ?></a></p>
+				<p><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'gallery', 'action'=>'update', 'id'=>$photo->id), 'default', true) ?>">Update</a></p>
+				<p><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'gallery', 'action'=>'delete', 'id'=>$photo->id), 'default', true) ?>">Delete</a></p>
+				<img src="<?= $this->baseUrl() . '/uploads/thumbs/' . $photo->picture ?>" width="112" height="112" />
+			</div>
+		<?php endforeach ?>
+		
+	<?php endif ?>
+	
+</div>
+

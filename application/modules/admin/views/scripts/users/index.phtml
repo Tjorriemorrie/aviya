@@ -1,0 +1,17 @@
+<h1>Users</h1>
+
+<?php if (sizeof($this->users) < 1) : ?>
+
+	<p>There is currently no users.</p>
+	
+<?php else : ?>
+	
+	<?php foreach ($this->users as $item) : ?>
+		<div class="userAdminBox">
+			<h4><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'users', 'action'=>'update', 'id'=>$item->id), 'default', true) ?>"><?= $item->username ?></a></h4>
+			<p>Last logged in <?= date('l, jS M Y', $item->date_login) ?></p>
+		</div>
+	<?php endforeach ?>
+	
+<?php endif ?>
+

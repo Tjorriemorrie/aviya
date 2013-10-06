@@ -1,0 +1,16 @@
+<h1><?= $this->title ?></h1>
+
+<h5><?= $this->userMsg ?></h5>
+
+<?php foreach ($this->users as $user) : ?>
+	<div class="userBox">
+		<h4><?= $user->username ?></h4>
+		<h5>Access:</h5>
+		<p>Albums: <a href="<?= $this->url(array('controller' => 'users', 'action' => 'user', 'for' => $user->username, 'change' => 'albums'), 'default', TRUE) ?>"><?= $user->albums ?></a></p>
+		<p>Blog: <a href="<?= $this->url(array('controller' => 'users', 'action' => 'user', 'for' => $user->username, 'change' => 'blog'), 'default', TRUE) ?>"><?= $user->blog ?></a></p>
+		<p>Poems: <a href="<?= $this->url(array('controller' => 'users', 'action' => 'user', 'for' => $user->username, 'change' => 'poems'), 'default', TRUE) ?>"><?= $user->poems ?></a></p>
+		<p>Messages: <a href="<?= $this->url(array('controller' => 'users', 'action' => 'user', 'for' => $user->username, 'change' => 'messages'), 'default', TRUE) ?>"><?= $user->messages ?></a></p>
+		<p>Users: <a href="<?= $this->url(array('controller' => 'users', 'action' => 'user', 'for' => $user->username, 'change' => 'users'), 'default', TRUE) ?>"><?= $user->users ?></a></p>
+	</div>
+<?php endforeach ?>
+

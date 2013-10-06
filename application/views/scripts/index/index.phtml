@@ -1,0 +1,47 @@
+<?php if (sizeof($this->albums) > 0) : ?>
+	<div id="homeAlbums">
+		<div id="homeAlbum">
+			<h4><a href="<?= $this->url(array('controller'=>'albums', 'action'=>'index'), 'default', true) ?>"><?= $this->albums[0]['title'] ?></a></h4>
+			<p><a href="<?= $this->url(array('controller'=>'albums', 'action'=>'index'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/uploads/albums/' . $this->albums[0]['cover'] ?>" alt="<?= $this->albums[0]['title'] ?>" /></a></p>
+		</div>
+		<div id="homeTracks">
+			<h5>Tracks</h5>
+			<?php foreach ($this->tracks as $track) : ?>
+				<p><?= $track->trackNumber . ' - ' . $track->trackTitle ?></p>
+			<?php endforeach ?>
+		</div>
+	</div>
+<?php endif ?>
+
+<div id="homeGallery">
+	<h4><a href="<?= $this->url(array('controller'=>'gallery', 'action'=>'index'), 'default', true) ?>" title="Gallery">Gallery</a></h4>
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/cd_behind.jpg' ?>" width="80" />
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/S12.jpg' ?>" width="80" />
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/S2.jpg' ?>" width="80" />
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/S8.jpg' ?>" width="80" />
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/S9.jpg' ?>" width="80" />
+	<img src="<?= $this->baseUrl() . '/img/FoTgallery/credits.jpg' ?>" width="80" />
+</div>
+
+<br class="clearBoth" />
+<hr />
+
+<div id="homeBlog">
+	<h4>Latest Articles</h4>
+	<?php foreach ($this->blog as $key => $item) : ?>
+		<?php if ($key >= 5) break; ?>
+		<p><a href="<?= $this->url(array('controller'=>'blog', 'action'=>'entry', 'title'=>$item->title), 'default', true) ?>" title="<?= $item->title ?>"><?= $item->title ?></a></p>
+		<h6><?= date('l, jS F Y', $item->date) ?></h6>
+	<?php endforeach ?>
+</div>
+
+  
+<div id="homePoems">
+	<h4>Latest Poems</h4>
+	<?php foreach ($this->poems as $key => $item) : ?>
+		<?php if ($key >= 5) break; ?>
+		<p><a href="<?= $this->url(array('controller'=>'poems', 'action'=>'view', 'entry'=>$item->title), 'default', true) ?>" title="<?= $item->title ?>"><?= $item->title ?></a></p>
+		<h6><?= date('l, jS F Y', $item->date) ?></h6>
+	<?php endforeach ?>
+</div>
+

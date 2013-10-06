@@ -1,0 +1,12 @@
+<span class="imgRight"><a href="<?= $this->url(array('controller'=>'poems'), 'default', true) ?>" title="Back"><img src="<?= $this->baseUrl() . '/img/back.png' ?>" alt="Back" /></a></span>
+
+<div class="poemBox">
+	<h1><?= $this->title ?></h1>
+	<p><?= date('jS M Y', $this->poem->date) ?></p>
+	<?= $this->poempic($this->poem) ?>
+	<?= $this->textBox($this->poem->content) ?>
+</div>
+
+<span class="imgRight"><a href="<?= $this->url(array('controller'=>'poems'), 'default', true) ?>" title="Back"><img src="<?= $this->baseUrl() . '/img/back.png' ?>" alt="Back" /></a></span>
+
+

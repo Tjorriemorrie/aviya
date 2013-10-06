@@ -1,0 +1,23 @@
+<h1><?= $this->title ?></h1>
+
+<?php if (time() < mktime(0, 0, 0, 7, 12, 2009)) : ?>
+	<div id="eventBox">
+		<h5>Upcoming event on the 11th July!</h5>
+		<p>Jacaranda's Demo Station competition at Silverstar Casino<br />
+		<a href="<?= $this->url(array('controller'=>'events', 'action'=>'upcoming'), 'default', true) ?>" title="Upcoming Event">Read here</a> for more details!</p>
+	</div>
+<?php endif ?>
+
+<?php if (sizeof($this->poems) < 1) : ?>
+    <h5>No poems</h5>
+<?php else : ?>
+	<?php foreach ($this->poems as $poem) : ?>
+		<div class="poemSummary"><a href="<?= $this->url(array('controller'=>'poems', 'action'=>'view', 'entry'=>$poem->title), 'default', true) ?>" title="Read Aviya's Poem: <?= $poem->title ?>">
+			<?php if (!empty($poem->picture)) : ?>
+				<img class="floatLeft" src="<?= $this->baseUrl() . '/uploads/poems/' . $poem->picture ?>" alt="<?= $poem->title ?> Poem Picture" height="40" />
+			<?php endif ?>
+			<h5><?= $poem->title ?></h5>
+			<p><?= date("l, jS F Y", $poem->date) ?></p>
+		</a></div>
+    <?php endforeach ?>
+<?php endif ?>

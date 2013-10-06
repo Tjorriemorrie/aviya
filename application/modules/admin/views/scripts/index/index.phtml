@@ -1,0 +1,30 @@
+<h1>Dashboard</h1>
+
+<div class="dashboardBox">
+	<h4><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'index'), 'default', TRUE) ?>">Blog</a></h4>
+	<?php foreach ($this->blog as $key => $item) : ?>
+		<?php if ($key >= 5) break; ?>
+		<p><?= date('jS M Y', $item->date) ?> - <?= $item->title ?></p>
+	<?php endforeach ?>
+</div>
+
+<div class="dashboardBox">
+	<a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'index'), 'default', TRUE) ?>" title="Poems"><img src="<?= $this->baseUrl() . '/img/poemsHeader.png' ?>" alt="Poems" /></a>
+	<?php foreach ($this->poems as $key => $item) : ?>
+		<?php if ($key >= 5) break; ?>
+		<p><?= date('jS M Y', $item->date) ?> - <?= $item->title ?></p>
+	<?php endforeach ?>
+</div>
+
+<div class="dashboardBox">
+	<a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'index'), 'default', TRUE) ?>" title="View messages"><img src="<?= $this->baseUrl() . '/img/messagesHeader.png' ?>" alt="Messages" /></a>
+	<p><?= sizeof($this->msgsUnread) ?> unread messages</p>
+</div>
+
+<div class="dashboardBox">
+	<a href="<?= $this->url(array('module'=>'admin', 'controller'=>'users', 'action'=>'index'), 'default', TRUE) ?>" title="Users"><img src="<?= $this->baseUrl() . '/img/usersHeader.png' ?>" alt="Users" /></a>
+	<?php foreach ($this->users as $item) : ?>
+		<p><?= $item->username ?> <?= $this->lastlogin($item) ?></p>
+	<?php endforeach ?>
+</div>
+

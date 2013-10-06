@@ -1,0 +1,55 @@
+<h1>Flight of Time</h1>
+
+<div id="albumFot">
+	<div id="albumFotImg">
+		<img src="<?= $this->baseUrl() . '/img/FoTfront.jpg'; ?>" alt="The Flight of Time album cover" />
+	</div>
+	<div id="albumFotTxt">
+		<h3>Songs on the album</h3>
+		<ol>
+		<?php foreach ($this->tracks as $key => $track) : ?>
+			<li><a id="track<?= $key ?>" href="#"><?= $track->trackTitle ?></a></li>
+		<?php endforeach ?>
+		</ol>
+	</div>
+	<div class="hidden">
+		<?php foreach ($this->tracks as $key => $track) : ?>
+			<div id="lyrics<?= $key ?>">
+				<p><?= nl2br($track->trackLyrics) ?></p>
+			</div>
+		<?php endforeach ?>
+	</div>
+</div>
+
+<h4 class="clearBoth"><?= $this->album->title ?> description</h4>
+<p><?= nl2br($this->album->description) ?><p>
+
+<div id="flashPlayer">Could not load music player.</div>
+
+<script type="text/javascript">
+$(function()
+{
+	var so = new SWFObject("<?= $this->baseUrl() . '/swf/playerMultiple.swf'; ?>", "mymovie", "200", "100", "7", "#000000");
+	so.addVariable("overColor","#660000")
+	so.addVariable("autoPlay","no")
+	so.addVariable("playlistPath","<?= $this->baseUrl() . '/swf/playlist.xml'; ?>")
+	so.write("flashPlayer");
+	
+});
+</script>
+
+
+<script type="text/javascript">
+$(function()
+{
+	<?php foreach ($this->tracks as $key => $track) : ?>
+		$('#track<?= $key ?>').colorbox(
+		{
+			width	: '400px',
+			inline	: true,
+			href	: '#lyrics<?= $key ?>',
+			title	: '<?= $track->trackTitle ?> Lyrics'
+		});
+	<?php endforeach ?>
+});
+</script>

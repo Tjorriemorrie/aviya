@@ -1,0 +1,9 @@
+<h4><span class="floatRight"><?= date('jS M Y', strtotime($this->msg->date_created)) ?></span><?= $this->msg->name ?></h4>
+
+<p><?= nl2br($this->msg->message) ?></p>
+
+<h4>
+	<a href="<?= $this->url(array('controller'=>'messages', 'action'=>'reply', 'to'=>$this->msg->id), 'default', true) ?>" title="Reply"><img src="<?= $this->baseUrl() . '/img/reply.png' ?>" alt="Reply" /></a>
+	<a href="<?= $this->url(array('controller'=>'messages', 'action'=>'all'), 'default', true) ?>" title="Back"><img src="<?= $this->baseUrl() . '/img/back.png' ?>" alt="Back" /></a>
+</h4>
+

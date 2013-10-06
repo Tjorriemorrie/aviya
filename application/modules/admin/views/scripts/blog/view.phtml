@@ -1,0 +1,11 @@
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'update', 'id'=>$this->blog->id), 'default', TRUE) ?>"><img src="<?= $this->baseUrl() . '/img/btnEdit.png' ?>" /></a></p>
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'delete', 'id'=>$this->blog->id), 'default', TRUE) ?>"><img src="<?= $this->baseUrl() . '/img/btnDelete.png' ?>" /></a></p>
+
+<h1><?= $this->blog->title ?></h1>
+<h6><?= date('l, jS M Y', $this->blog->date) ?></h6>
+<p class="italic"><?= $this->blog->description ?></p>
+<img class="imgRight" src="<?= $this->baseUrl() . '/uploads/blogs/' . $this->blog->picture ?>" />
+<p><?= nl2br($this->blog->content) ?></p>
+
+<p class="marTop20"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'blog', 'action'=>'index'), 'default', TRUE) ?>"><img src="<?= $this->baseUrl() . '/img/btnBack.png' ?>" /></a></p>
+

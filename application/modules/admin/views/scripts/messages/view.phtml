@@ -1,0 +1,12 @@
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'reply', 'id'=>$this->message->id), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnReply.png' ?>" /></a></p>
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'delete', 'id'=>$this->message->id), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnDelete.png' ?>" /></a></p>
+
+<h1><?= $this->message->subject ?></h1>
+<h5>From: <?= $this->message->name ?></h5>
+<h6>Date: <?= date('jS M Y', strtotime($this->message->date_created)) ?></h6>
+<p><?= nl2br(stripslashes($this->message->message)) ?></p>
+
+<br class="clearBoth" />
+<p class="italic">IP: <?= $this->message->ipaddress ?></p>
+<p><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'messages', 'action'=>'index'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnBack.png' ?>" /></a></p>
+

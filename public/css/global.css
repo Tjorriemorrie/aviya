@@ -1,0 +1,120 @@
+/***** GENERAL TAGS *****/
+body													{text-align:center; color:#FFF; font-family:Verdana, Geneva, sans-serif; font-size:14px; line-height:1.2em;
+															background-color:#000; background-image:url(../img/bgbody.jpg); background-repeat:repeat; background-attachment:fixed; background-position:-40px 0;}
+h1														{font-weight:bold; font-size:22px; padding:0 0 20px;}
+h2														{font-weight:bold; font-size:20px; padding:10px 0;}
+h3														{font-weight:bold; font-size:18px; padding:10px 0;}
+h4														{font-weight:bold; font-size:16px; padding:10px 0;}
+h5														{font-weight:bold; font-size:14px; padding:10px 0;}
+h6														{font-weight:bold; font-size:12px; padding:10px 0;}
+p														{font-weight:normal; font-size:14px; padding:4px 0 4px; text-align:justify;}
+pre														{font-family:Verdana; line-height:1.2em; padding:0; margin:0;}
+a, a:visited											{color:#E3DB84; text-decoration:none;}
+a:hover, a:focus										{color:#FF0;}
+
+
+/***** WRAPPER *****/
+#wrapper												{position:relative; width:800px; margin:0 auto; text-align:left; background:url(../img/wrapperBg.png) 0 0 repeat;}
+
+
+/***** HEADER *****/
+#header													{width:800px; height:120px;}
+#header #aviya											{margin:25px 20px;}
+
+
+/***** CONTENT *****/
+#content												{clear:both; width:760px; margin:20px;}
+
+
+/* navigation */
+#navigation												{clear:both; width:800px; height:30px; background:url(../img/navigation.jpg) 0 0 no-repeat;}
+#navigation ul											{margin:0 100px;}
+#navigation ul li										{display:block; float:left;}
+#navigation ul li a										{display:block; float:left; width:100px; height:28px;}
+
+#navAlbums a:hover										{background:url(../img/navigation.jpg) -100px -30px no-repeat}
+#albumsPage #navAlbums									{background:url(../img/navigation.jpg) -100px -60px no-repeat;}
+
+#navGallery a:hover										{background:url(../img/navigation.jpg) -200px -30px no-repeat;}
+#galleryPage #navGallery								{background:url(../img/navigation.jpg) -200px -60px no-repeat;}
+
+#navBlog a:hover										{background:url(../img/navigation.jpg) -300px -30px no-repeat;}
+#blogPage #navBlog										{background:url(../img/navigation.jpg) -300px -60px no-repeat;}
+
+#navPoems a:hover										{background:url(../img/navigation.jpg) -400px -30px no-repeat;}
+#poemsPage #navPoems									{background:url(../img/navigation.jpg) -400px -60px no-repeat;}
+
+#navAbout a:hover										{background:url(../img/navigation.jpg) -500px -30px no-repeat;}
+#aboutPage #navAbout									{background:url(../img/navigation.jpg) -500px -60px no-repeat;}
+
+#navContact a:hover										{background:url(../img/navigation.jpg) -600px -30px no-repeat;}
+#contactPage #navContact								{background:url(../img/navigation.jpg) -600px -60px no-repeat;}
+	
+
+/***** ADMIN nav *****/
+#adminNav											{background:url(../img/adminNav.png) 0 0 no-repeat; width:200px; position:relative; height:350px;}
+#adminNav											{list-style:none;}
+#adminNav a, #adminNav li							{position:absolute; left:0px; width:200px; display:block; height:50px;}
+
+#adminNav #navDashboard								{top:0px;}
+#adminNav #navDashboard a:hover						{background:url(../img/adminNav.png) -200px 0px no-repeat;}
+.dashboardPg #adminNav #navDashboard				{background:url(../img/adminNav.png) -400px 0px no-repeat;}
+
+#adminNav #navAlbums								{top:50px;}
+#adminNav #navAlbums a:hover						{background:url(../img/adminNav.png) -200px -50px no-repeat;}
+
+#adminNav #navBlog									{top:100px;}
+#adminNav #navBlog a:hover							{background:url(../img/adminNav.png) -200px -100px no-repeat;}
+.blogPg #adminNav #navBlog							{background:url(../img/adminNav.png) -400px -100px no-repeat;}
+
+#adminNav #navPoems									{top:150px;}
+#adminNav #navPoems a:hover							{background:url(../img/adminNav.png) -200px -150px no-repeat;}
+.poemsPage #adminNav #navPoems						{background:url(../img/adminNav.png) -400px -150px no-repeat;}
+
+#adminNav #navMessages								{top:200px;}
+#adminNav #navMessages a:hover						{background:url(../img/adminNav.png) -200px -200px no-repeat;}
+.messagesPage #adminNav #navMessages				{background:url(../img/adminNav.png) -400px -200px no-repeat;}
+
+#adminNav #navUsers									{top:250px;}
+#adminNav #navUsers a:hover							{background:url(../img/adminNav.png) -200px -250px no-repeat;}
+.usersPage #adminNav #navUsers						{background:url(../img/adminNav.png) -400px -250px no-repeat;}
+
+#adminNav #navLogout								{top:300px;}
+#adminNav #navLogout a:hover						{background:url(../img/adminNav.png) -200px -300px no-repeat;}
+
+
+
+/***** FOOTER *****/
+#footer {position:relative; clear:both; width:800px; height:200px; background:url(../img/footer.png) 0 0 no-repeat;}
+	#footer p {position:absolute; bottom:0; color:#555; font-size:12px; padding:5px 10px; line-height:1.4em; text-align:center; width:780px;}
+
+
+/***** PAGING *****/
+.paging												{text-align:center;}
+.paging a											{padding:0 10px;}
+
+
+/***** FLOATS *****/
+.clearBoth											{clear:both;}
+.floatLeft											{float:left;}
+.clearLeft											{clear:left;}
+.floatRight											{float:right;}
+.clearRight											{clear:right;}
+.imgLeft											{float:left; padding:5px 10px;}
+.imgRight											{float:right; padding:5px 10px;}
+.option												{clear:right; float:right; padding:10px 15px;}
+
+
+/***** FONTS *****/
+.bold												{font-weight:bold;}
+.italic												{font-style:italic;}
+.indent												{margin-left:20px;}
+.center												{text-align:center;}
+.smaller											{font-size:smaller;}
+.hidden												{display:none;}
+
+
+/***** MARGINS *****/
+.marTop20											{margin-top:20px;}
+.marTop40											{margin-top:40px;}
+

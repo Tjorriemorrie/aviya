@@ -1,0 +1,14 @@
+<h1>Create New Poem</h1>
+
+<p>A picture is not required.
+<br />If a picture is uploaded it will be resized to a width of 200px if the picture exceeds that width.</p>
+
+<?= $this->form ?>
+
+<script type="text/javascript">
+$(function()
+{
+	$('#poemForm #content').elastic();	
+});
+</script>
+

@@ -1,0 +1,12 @@
+<h6 class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'update', 'id'=>$this->poem->id), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnEdit.png' ?>" /></a></h6>
+<h6 class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'delete', 'id'=>$this->poem->id), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnDelete.png' ?>" /></a></h6>
+
+<h1><?= $this->poem->title ?></h1>
+<h6><?= date('jS M Y', $this->poem->date) ?></h6>
+<br class="clearBoth" />
+<?php if (strlen($this->poem->picture) > 0) : ?>
+	<img class="imgRight" src="<?= $this->baseUrl() . '/uploads/poems/' . $this->poem->picture ?>" />
+<?php endif ?>
+<p><?= nl2br(stripslashes($this->poem->content)) ?></p>
+
+<h6><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'index'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnBack.png' ?>" /></a>

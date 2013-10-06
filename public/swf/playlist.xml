@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<track>
+		<path>/swf/song1.mp3</path>
+		<title>1 - So Sorry</title>
+	</track>
+	<track>
+		<path>/swf/song2.mp3</path>
+		<title>2 - Smile</title>
+	</track>
+	<track>
+		<path>/swf/song3.mp3</path>
+		<title>3 - Slow Down</title>
+	</track>
+	<track>
+		<path>/swf/song4.mp3</path>
+		<title>4 - Resignation (giving up)</title>
+	</track>
+	<track>
+		<path>/swf/song5.mp3</path>
+		<title>5 - Through</title>
+	</track>
+	<track>
+		<path>/swf/song6.mp3</path>
+		<title>6 - Badly Misunderstood</title>
+	</track>
+	<track>
+		<path>/swf/song7.mp3</path>
+		<title>7 - You Can Do</title>
+	</track>
+	<track>
+		<path>/swf/song8.mp3</path>
+		<title>8 - Where Are You</title>
+	</track>
+	<track>
+		<path>/swf/song9.mp3</path>
+		<title>9 - See The Light</title>
+	</track>
+	<track>
+		<path>/swf/song10.mp3</path>
+		<title>10 - Without You</title>
+	</track>
+	<track>
+		<path>/swf/song11.mp3</path>
+		<title>11 - Searching</title>
+	</track>
+	<track>
+		<path>/swf/song12.mp3</path>
+		<title>12 - Just To Be With You</title>
+	</track>
+</xml>

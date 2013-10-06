@@ -1,0 +1,19 @@
+<h6 class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'create'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnNew.png' ?>" /></a></h6>
+<h1>Poems</h1>
+
+<?php if (sizeof($this->poems) < 1) : ?>
+
+	<p>There is currently no poems.</p>
+	
+<?php else : ?>
+	
+	<?php foreach ($this->poems as $item) : ?>
+		<div class="poemAdminBox">
+			<p class="option smaller bold"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'status', 'id'=>$item->id), 'default', true) ?>" title="Toggle status"><?= $item->status ?></a></p>
+			<h4><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'poems', 'action'=>'view', 'id'=>$item->id), 'default', true) ?>"><?= $item->title ?></a></h4>
+			<p><?php if ($item->date_modified == 0) echo 'Created on ' . date('j M y', strtotime($item->date_created)); else echo 'Last modified on ' . date('j M y', $item->date_modified); ?></p>
+		</div>
+	<?php endforeach ?>
+	
+<?php endif ?>
+

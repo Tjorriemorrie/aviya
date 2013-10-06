@@ -1,0 +1,101 @@
+<?php ob_start() ?>
+
+<?= $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<?= $this->headTitle($this->title . ' - Aviya') ?>
+	
+	<?php $this
+		->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8')
+		->headMeta()->appendHttpEquiv('Content-Language', 'en-GB')
+		->headMeta()->appendHttpEquiv('Cache-Control', 'public, no-transform, must-revalidate')
+		->headMeta()->appendHttpEquiv('expires', date('r', time()+(86400*30)))
+		->headMeta()->appendHttpEquiv('Last-Modified', date('r', time()))
+		->headMeta()->appendHttpEquiv('description', 'Aviya is a new talented singer and has released her debut album Flight of Time.')
+		->headMeta()->appendHttpEquiv('keywords', 'aviya, aviyacrest, flight of time, poems, blog, gallery, music, album')
+		->headMeta()->appendHttpEquiv('robots', 'index, follow')
+		->headMeta()->appendHttpEquiv('verify-v1', 'SrdCrkkwrCseq8e/53ub8UtQ/he8M4HDmX0OzjGBRP0=')
+	?>
+	<?= $this->headMeta() ?>
+	
+	<?php $this
+        ->headLink(array('rel'=>'shortcut icon', 'href' => $this->baseUrl() . '/img/favicon.gif', 'type'=>'image/gif'), 'PREPEND')	
+		->headLink()->prependStylesheet($this->baseUrl() . '/css/resets.css')
+		->headLink()->appendStylesheet($this->baseUrl() . '/css/theme/ui.all.css')
+		->headLink()->appendStylesheet($this->baseUrl() . '/css/colorbox.css')
+	    ->headLink()->appendStylesheet($this->baseUrl() . '/css/global.css')
+		->headLink()->appendStylesheet($this->baseUrl() . '/css/forms.css')
+		->headLink()->appendStylesheet($this->baseUrl() . '/css/pages.css') 
+		?>
+	<?= $this->headLink() ?>
+	
+	<?php $this
+		->headScript()->prependFile($this->baseUrl() . '/js/jquery-1.3.1.min.js')
+		->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.7.min.js') 
+		->headScript()->appendFile($this->baseUrl() . '/js/jquery.easing.1.3.js') 
+		->headScript()->appendFile($this->baseUrl() . '/js/jquery.colorbox-min.js') 
+		->headScript()->appendFile($this->baseUrl() . '/js/jquery.elastic-1.6.js') 
+		->headScript()->appendFile($this->baseUrl() . '/swf/swfobject.js')
+		->headScript()->appendFile($this->baseUrl() . '/js/docready.js') 
+		?>
+	<?= $this->headScript() ?>	
+</head>
+
+<body id="<?= strtolower(Zend_Controller_Front::getInstance()->getRequest()->getControllerName()) ?>Page">
+	<img id="noteLeftOne" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteLeftTwo" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteLeftThree" src="<?= $this->baseUrl() . '/img/note4.png' ?>" alt="" />
+	<img id="noteLeftFour" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteLeftFive" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteLeftSix" src="<?= $this->baseUrl() . '/img/note4.png' ?>" alt="" />
+	<img id="noteRightOne" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteRightTwo" src="<?= $this->baseUrl() . '/img/note4.png' ?>" alt="" />
+	<img id="noteRightThree" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteRightFour" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+	<img id="noteRightFive" src="<?= $this->baseUrl() . '/img/note4.png' ?>" alt="" />
+	<img id="noteRightSix" src="<?= $this->baseUrl() . '/img/note3.png' ?>" alt="" />
+<div id="wrapper">
+
+
+	<div id="header">
+		<a href="<?= $this->url(array('controller'=>'index', 'action'=>'index'), 'default', true) ?>" title="Aviya"><img id="aviya" src="<?= $this->baseUrl() . '/img/aviya.png'; ?>" alt="Aviya" /></a>
+	    <img class="imgRight" src="<?= $this->baseUrl() . '/img/logo.png'; ?>" alt="Aviya" />
+	</div>
+	
+	<div id="navigation">
+		<?= $this->navigation() ?>
+	</div>
+	
+	<div id="content">
+		<?php echo $this->layout()->content ?>
+	</div>
+	
+	<div id="footer">
+		<p>
+			<span class="floatRight">Design by Aviya</span>
+			<span class="floatLeft"><?= date('jS F Y', time()) ?></span>
+			<span>&copy; <?= date('Y', time()) ?> Aviya</span>
+		</p>
+	</div>
+
+</div>
+
+<?php if (APPLICATION_ENV == 'production' ) : ?>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-3190371-1");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+<?php endif ?>
+
+</body>
+</html>
+
+
+<?php ob_end_flush() ?>

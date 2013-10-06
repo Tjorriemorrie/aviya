@@ -1,0 +1,14 @@
+<p class="option"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'index'), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/img/btnBack.png' ?>" /></a></p>
+<h1><?= $this->album->title ?></h1>
+<p>
+	<img class="imgRight" src="<?= $this->baseUrl() . '/uploads/albums/' . $this->album->cover ?>" />
+	<ol>
+		<?php foreach ($this->tracks as $item) : ?>
+			<li><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'settrack', 'id'=>$item->id), 'default', true) ?>"><?= $item->trackNumber ?>) <?= $item->trackTitle ?></a></li>
+		<?php endforeach ?>
+	</ol>
+</p>
+<p class="clearBoth">
+	<?= nl2br(stripslashes($this->album->description)) ?>
+</p>
+

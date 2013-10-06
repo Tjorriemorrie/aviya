@@ -1,0 +1,12 @@
+<h1>Delete Blog Entry?</h1>
+
+<p>The picture (if any) and the entry will be permanently removed.</p>
+
+<?= $this->form ?>
+
+<br class="clearBoth" />
+
+<h3 class="marTop40"><?= $this->blog->title ?></h3>
+<h6><?= date('l, jS M Y', $this->blog->date) ?></h6>
+<p class="italic"><?= $this->blog->description ?></p>
+

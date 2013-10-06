@@ -1,0 +1,13 @@
+<br class="marTop20" />
+<h1 class="header"><?= $this->escape($this->title) ?></h1>
+
+<?= $this->form ?>
+
+<br class="marTop20" />
+
+<div class="main">
+	<h3 class="clearBoth"><?= $this->photo->name ?></h3>
+	<img src="<?= $this->baseUrl() . '/uploads/gallery/' . $this->photo->picture ?>" />
+</div>
+
+

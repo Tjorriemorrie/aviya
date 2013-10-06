@@ -1,0 +1,18 @@
+<h1>Albums</h1>
+
+<?php if (sizeof($this->albums) < 1) : ?>
+
+	<p>There is currently no albums.</p>
+	
+<?php else : ?>
+	
+	<?php foreach ($this->albums as $item) : ?>
+		<div class="albumAdminBox">
+			<h4 class="center"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'setalbum', 'id'=>$item->id), 'default', true) ?>"><?= $item->title ?></a></h4>
+			<p class="center"><a href="<?= $this->url(array('module'=>'admin', 'controller'=>'albums', 'action'=>'setalbum', 'id'=>$item->id), 'default', true) ?>"><img src="<?= $this->baseUrl() . '/uploads/albums/' . $item->cover ?>" /></a></p>
+			<p class="center italic smaller"><?php if ($item->date_modified == 0) echo 'Created on ' . date('j M y', strtotime($item->date_created)); else echo 'Last modified on ' . date('j M y', $item->date_modified); ?></p>
+		</div>
+	<?php endforeach ?>
+	
+<?php endif ?>
+

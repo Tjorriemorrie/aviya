@@ -1,0 +1,14 @@
+<p class="floatRight"><a href="<?= $this->baseUrl() . '/blog.xml' ?>" title="Subscribe to rss feed"><img src="<?= $this->baseUrl() . '/img/rss.png' ?>" alt="RSS feed" /></a></p>
+
+<h1><?= $this->title ?></h1>
+
+<?php foreach ($this->blogs as $blog) : ?>
+    <div class="blogSummary">
+		<a href="<?= $this->url(array('controller'=>'blog', 'action'=>'entry', 'title'=>$blog->title), 'default', true); ?>" title="Read this blog entry!">
+	        <p class="title floatLeft"><?= $this->escape($blog->title); ?></p>
+	        <p class="date floatRight"><?= date("l, jS F Y", $blog->date); ?></p>
+	        <p class="description clearLeft"><?= $this->escape($blog->description); ?></p>
+        </a>
+	</div>
+<?php endforeach; ?>
+

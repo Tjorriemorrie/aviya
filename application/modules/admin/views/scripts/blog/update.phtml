@@ -1,0 +1,24 @@
+<h1>Update Blog Entry</h1>
+
+<p>The picture will be resized to a width of 200 if it is wider.
+<br />Upload of picture is not required. If none, the current picture (if any) will be kept.</p>
+
+<?= $this->form ?>
+
+<br class="clearBoth" />
+<br />
+
+<?php if (strlen($this->blog->picture) < 1) : ?>
+	<p>There is currently no picture for this blog entry.</p>
+<?php else : ?>
+	<p><img class="imgLeft" src="<?= $this->baseUrl() . '/uploads/blogs/' . $this->blog->picture ?>" /></p>
+<?php endif ?>
+
+
+<script type="text/javascript">
+$(function()
+{
+	$('#blogForm #content').elastic();	
+});
+</script>
+

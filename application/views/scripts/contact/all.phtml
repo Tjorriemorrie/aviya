@@ -1,0 +1,17 @@
+<h1><?= $this->title ?></h1>
+
+<?php if (sizeof($this->messages) < 0) : ?>
+	<h3>Inbox (empty)</h3>
+<?php else : ?>
+	<h3>Inbox <span id="unreadSize">(<?= sizeof($this->unread) ?>)</span></h3>
+	<table id="mailbox" border="0" cellspacing="0" cellpadding="0">
+		<tr><th>From</th><th>Subject</th><th>Date</th></tr>
+		<?php foreach ($this->messages as $msg) : ?>
+			<?php if ($msg->marked == 'unread') echo '<tr class="unread">'; else echo '<tr>'; ?>
+				<td><a href="<?= $this->url(array('controller'=>'messages', 'action'=>'read', 'id'=>$msg->id), 'default', TRUE) ?>" title="<?= $msg->subject ?>"><?= $msg->name ?></a></td>
+				<td><a href="<?= $this->url(array('controller'=>'messages', 'action'=>'read', 'id'=>$msg->id), 'default', TRUE) ?>" title="<?= $msg->subject ?>"><?= $msg->subject ?></a></td>
+				<td><a href="<?= $this->url(array('controller'=>'messages', 'action'=>'read', 'id'=>$msg->id), 'default', TRUE) ?>" title="<?= $msg->subject ?>"><?= date('d M Y', strtotime($msg->date_created)) ?></a></td>
+			</tr>
+		<?php endforeach ?>
+	</table>
+<?php endif ?>

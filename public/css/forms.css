@@ -1,0 +1,54 @@
+/***** GLOBAL settings *****/
+form {font-family:Verdana, Geneva, sans-serif; margin:10px 0; font-size:14px;}
+form dl p.hint {background:#FFC; color:#000; border:1px solid #CCC; padding:5px 20px; margin:1% 0 2%; font-size:12px; border-radius:0.5em; -moz-border-radius:0.5em; -webkit-border-radius:0.5em;}
+
+form dt {clear:both; margin:0 0 1px;}
+form label {display:block; width:150px; float:left; line-height:1.4em;}
+
+form input 											{float:left;}
+form input[type=text], form input[type=password]	{width:200px;}
+form input[type=file] 								{font-size:0.675em; padding:2px; margin:0;}
+form input[type=radio] 								{padding:0px; margin:0 5px 0 0;}
+form textarea 										{float:left; width:350px; height:200px; font-family:Verdana, Geneva, sans-serif; font-size:12px;}
+form input[type=text]:focus, form input[type=password]:focus, form input[type=file]:focus
+												{background-color:#FFC;}
+
+form dd p.description							{float:left; padding:2px 5px; margin:1px 5px; font-size:smaller; color:#666; line-height:1.4em; font-style:italic;}
+form dd p.hint 									{float:left; padding:0px 5px; margin:1px 5px; font-size:smaller; color:#666; line-height:1.4em; font-style:italic; background:none; border:0;}
+form dd ul.errors li							{list-style:none; clear:both; color:#900; margin:0 0 0 150px; padding:0 0 8px; font-size:10px;}
+
+
+form dt#cancel-label							{display:none;}
+form input[type=submit]							{float:left; margin:1px 1px 1px 150px; padding:4px 15px;}
+form #cancel									{margin:1px;}
+
+form #recaptcha									{display:none;}
+form #recaptcha_response_field					{left:0;}
+form #recaptcha_area							{}
+
+
+/***** YesNo Form *****/
+#yesnoForm .submit-group						{float:left; clear:none;}
+#yesnoForm input[type=submit]					{float:left; margin:0; padding:2px 10px;}
+
+
+/***** CONTACT form *****/
+#contactForm #name {width:150px;}
+#contactForm #subject {width:250px;}
+
+/**************************************************************************************************************************/
+
+/***** BLOG form *****/
+#blogForm										{margin:20px 0;}
+#blogForm dt label								{width:100px;}
+#blogForm #title								{width:450px;}
+#blogForm #date									{width:450px;}
+#blogForm #description							{width:450px; height:70px; font-size:12px;}
+#blogForm #content								{width:450px; height:100px; margin:0; float:left;}
+#blogForm #submit								{margin-left:100px;}
+
+
+/***** POEMS *****/
+#poemForm										{}
+#poemForm #content								{float:left; width:400px; height:100px; margin:0;}
+
